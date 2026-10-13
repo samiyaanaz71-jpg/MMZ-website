@@ -1,0 +1,454 @@
+/* Color palette variables used across the site */
+:root {
+  --ink: #1b2336;
+  --nav: #02061b;
+  --paper: #ffffff;
+  --collection: #f5f6fa;
+  --muted: #767c88;
+  --line: #e0e3e9;
+  --accent: #a0443e;
+  --blue: #4f7fff;
+  --blue-light: #7ca6ff;
+}
+
+/* Global reset and default body styles */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button, input {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+
+/* Centered container with max width limit */
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* Navigation bar layout and logo styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 5%;
+  background: var(--nav);
+  color: var(--paper);
+}
+.logo img {
+  display: block;
+  width: 180px;
+  height: 55px;
+  object-fit: contain;
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Dropdown menu functionality and hover styles */
+.dropdown {
+  position: relative;
+}
+.menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 220px;
+  padding: 8px;
+  background: var(--nav);
+  z-index: 10;
+}
+.menu a {
+  display: block;
+  padding: 12px;
+}
+.dropdown:hover .menu, .dropdown:focus-within .menu {
+  display: block;
+}
+.menu a:hover, .menu a:focus-visible {
+  color: var(--blue-light);
+}
+
+/* Hero section banner, headings, and button styling */
+.hero {
+  min-height: 570px;
+  padding: 80px 5%;
+  color: var(--paper);
+  background: var(--nav) url("bg.png") no-repeat right center / auto 100%;
+}
+.main {
+  max-width: 560px;
+}
+.hero h1 {
+  font-size: 56px;
+  line-height: 1.15;
+  margin: 15px 0;
+}
+.hero p {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 480px;
+}
+.pp {
+  color: var(--blue-light);
+}
+.em {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 14px 24px;
+  border-radius: 6px;
+  background: var(--blue);
+}
+
+/* Full-width light background and vertical padding */
+.collection {
+  padding: 56px 0;
+  background: var(--collection);
+}
+
+/* Small bold label text */
+.TMC {
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+/* Flex container to keep title and count spaced apart */
+.collection-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Main section heading size and margins */
+h2 {
+  font-size: 34px;
+  line-height: 1.3;
+  margin: 14px 0 24px;
+}
+
+/* Counter text styling */
+.count {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Categories left, search right; both positioned before the cards */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* Category tabs layout with spacing */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+/* Default tab button styling */
+.tabs button {
+  padding: 16px 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+/* Active tab style with accent color and bottom indicator */
+.tabs button.on {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+
+/* Brand buttons category buttons se chhote hain. */
+.brands {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 26px;
+}
+.brands button {
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+  font-size: 13px;
+}
+.brands button.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--paper);
+}
+
+/* Flexible search container with aligned items and clear height */
+.search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 240px;
+  min-height: 44px;
+}
+
+/* Full-width clean text input without borders */
+.search input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+/* Highlight input outline on focus */
+.search input:focus {
+  outline: 1px solid var(--blue);
+  outline-offset: 4px;
+}
+
+/* Circular glass part of the search icon */
+.searchbox {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--muted);
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Handle line for the search icon */
+.searchbox::after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  bottom: -3px;
+  width: 6px;
+  height: 2px;
+  background: var(--muted);
+  transform: rotate(45deg);
+}
+
+/* 4 equal columns on desktop with gap between cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* display: contents ki madad se #grid aur .box elements apna khud ka box khatam kar dete hain, 
+   aur unke andar ke items direct main grid ke sath connect ho jate hain */
+#grid, .box {
+  display: contents;
+}
+
+/* Individual card styling*/
+.card {
+  min-width: 0; /* Flex/Grid items ko shrink hone se bachata hai */
+  overflow: hidden; /* Extra content ya image bahar na nikle */
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--paper);
+}
+
+/* for fixed photo area */
+.photo {
+  height: 270px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 34px 20px 20px;
+  border-bottom: 1px solid var(--line);
+}
+/* Image styling */
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+/* Agar image par [hidden] attribute laga ho toh wo show na ho */
+.photo img[hidden] {
+  display: none;
+}
+/* Badge Sale ya New fixed in top left corner of photo */
+.badge {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  padding: 5px 8px;
+  background: var(--collection);
+  border: 1px solid var(--line);
+  font-size: 9px;
+  color: var(--muted);
+}
+
+/* For give properly alignment and spacing to cards */
+.details {
+  padding: 24px 20px 18px;
+}
+/* Subtitle / Brand info */
+.details p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+/* Product title Heading */
+.card h3 {
+  margin: 0 0 16px;
+  font-size: 17px;
+  line-height: 1.4;
+  overflow-wrap: anywhere; /* long word ho toh line se bahar nahi jayega */
+}
+/* Price section: Top border line ke saath highlighted bold price */
+.price {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 21px;
+  font-weight: bold;
+}
+/* Price currency pkr*/
+.price small {
+  font-size: 10px;
+  font-weight: normal;
+}
+
+/* for give extra spacing to top and bottom */
+.guidance {
+  padding: 70px 0;
+}
+/* Flexbox implementation: */
+.guidance-inner, .footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.guidance p {
+  max-width: 430px;/* Paragraph ko zyada phailne nahi dega */
+  color: var(--muted);/* Soft light color */
+  line-height: 1.7;/*gap between lines */
+}
+
+/* footer styling */
+footer {
+  padding: 36px 0;
+  background: var(--nav);
+  color: var(--paper);
+  font-size: 13px;
+}
+/* Footer text formatting: Slightly dim text aur decent line height */
+footer p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Tablet & mobile adjustments for smaller screens */
+@media (max-width: 1000px) {
+  
+  /* Show 2 cards per row instead of the default desktop view */
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  /* Allow control items to wrap to the next line if space runs out, with a little bottom spacing */
+  .controls {
+    flex-wrap: wrap;
+    padding-bottom: 12px;
+  }
+  
+  /* Drop the background image on smaller screens for a cleaner look */
+  .hero {
+    background-image: none;
+  }
+}
+
+
+/* Through this everything will be under the card */
+@media (max-width: 600px) {
+  .navbar, .collection-title, .guidance-inner, .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-container {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .hero {
+    padding: 48px 5%;
+    min-height: 440px;
+  }
+  .hero h1 {
+    font-size: 36px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  .collection {
+    padding: 36px 0;
+  }
+  .collection-title {
+    gap: 0;
+    margin-bottom: 16px;
+  }
+  .tabs {
+    gap: 16px;
+  }
+  .cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+  .photo {
+    height: 260px;
+  }
+  .guidance {
+    padding: 40px 0;
+  }
+}
+
+/* Keep each contact icon beside its details. */
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* Give all contact icons the same size. */
+.contact-link i {
+  width: 20px;
+  flex-shrink: 0;
+  font-size: 18px;
+  text-align: center;
+}
+/* Keep the email address inside the screen. */
+.contact-link span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+

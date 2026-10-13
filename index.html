@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Set the page title and screen size. -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memon Mobile Zone</title>
+  <!-- Load the contact icons. -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <!-- Load your existing CSS. -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation links and logo. -->
+  <nav class="navbar">
+    <a href="#Home" class="logo">
+      <img src="MMZ logo.png" alt="Memon Mobile Zone">
+    </a>
+    <div class="nav-container">
+      <a href="#Home">
+        Home
+      </a>
+      <!-- Select a phone category. -->
+      <div class="dropdown">
+        <a href="#discover" class="dropbtn">
+          Mobile
+          <span class="arrow">
+            &#9660;
+          </span>
+        </a>
+        <div class="menu">
+          <a href="#discover" onclick="pickCat('new')">
+            New Smartphones
+          </a>
+          <a href="#discover" onclick="pickCat('used')">
+            Used Android Phones
+          </a>
+          <a href="#discover" onclick="pickCat('keypad')">
+            Keypad Phones
+          </a>
+        </div>
+      </div>
+      <a href="#About-us">
+        About us
+      </a>
+      <a href="#Contact">
+        Contact
+      </a>
+    </div>
+  </nav>
+  <main>
+    <!-- Main banner. -->
+    <section class="hero" id="Home">
+      <div class="main">
+        <h1>
+          FIND YOUR
+          <br>
+          <span class="pp">
+            PERFECT PHONE
+          </span>
+        </h1>
+        <p>
+          Discover smartphones that fit your needs and your budget.
+          <br>
+          Explore our collection and find the right phone for you.
+        </p>
+        <a class="em" href="#discover">
+          Explore Mobile →
+        </a>
+      </div>
+    </section>
+    <!-- Filters appear above the phone cards. -->
+    <section class="collection" id="discover">
+      <div class="container">
+        <span class="TMC">
+          THE MOBILE COLLECTION
+        </span>
+        <div class="collection-title">
+          <h2>
+            Discover your next phone.
+          </h2>
+          <p id="count" class="count" aria-live="polite">
+          </p>
+        </div>
+        <!-- JavaScript adds the category buttons. -->
+        <div class="controls">
+          <div id="tabs" class="tabs" aria-label="Phone categories">
+          </div>
+          <label class="search">
+            <span class="searchbox" aria-hidden="true">
+            </span>
+            <input id="search" type="search" placeholder="Search mobiles..." aria-label="Search mobiles">
+          </label>
+        </div>
+        <!-- JavaScript adds the brand buttons. -->
+        <div id="brands" class="brands" aria-label="Phone brands">
+        </div>
+        <!-- Both phone lists use the same layout. -->
+        <div class="cards">
+          <div id="grid">
+          </div>
+          <div class="box">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About us section. -->
+    <section class="guidance" id="About-us">
+      <div class="container guidance-inner">
+        <div>
+          <span class="TMC">
+            LET'S FIND YOUR FIT
+          </span>
+          <h2>
+            A little guidance.
+            <br>
+            A better connection.
+          </h2>
+        </div>
+        <p>
+          Have a phone in mind? Let's talk about what works for you.
+        </p>
+      </div>
+    </section>
+  </main>
+  <!-- The top Contact link leads here. -->
+  <footer id="Contact">
+    <div class="container footer-inner">
+      <div>
+      <a class="logo"><img src="MMZ logo.png" alt="Memon Mobile Zone"></a>
+        <!-- Click to send an email. -->
+      <p>
+          <a class="contact-link" href="mailto:memonmobilezone@gmail.com" aria-label="Email Memon Mobile Zone">
+            <i class="fa-solid fa-envelope" aria-hidden="true">
+            </i>
+            <span>
+              memonmobilezone@gmail.com
+            </span>
+          </a>
+        </p>
+        <!-- Click to make a call. -->
+        <p>
+          <a class="contact-link" href="tel:03008317234" aria-label="Call Memon Mobile Zone">
+            <i class="fa-solid fa-phone" aria-hidden="true">
+            </i>
+            <span>03008317234</span>
+          </a>
+        </p>
+        <!-- Open WhatsApp using the same number. -->
+        <p>
+          <a class="contact-link" href="https://wa.me/923008317234" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Memon Mobile Zone">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true">
+            </i>
+            <span>
+              03008317234
+            </span>
+          </a>
+        </p>
+      </div>
+      <p>
+        &copy; 2026 MMZ Memon Mobile Zone. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+  <!-- Run JavaScript after the HTML is ready. -->
+  <script src="script.js" defer></script>
+</body>
+</html>
